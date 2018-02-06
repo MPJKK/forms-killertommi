@@ -1,2 +1,6 @@
-<input type="file">
-<button>Upload</button>
+<form>
+    <input type="file" name="file" (change)="setFile($event)">
+    <input type="text" name="title">
+    <textarea name="description"></textarea>
+    <button>Upload</button>
+</form>
