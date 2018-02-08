@@ -12,15 +12,9 @@ export class FrontComponent implements OnInit {
   constructor(public mediaService: MediaService) { }
 
   ngOnInit() {
-    this.mediaService.getAllMedia().subscribe(data => {
+    this.mediaService.getNew().subscribe(data => {
       console.log(data);
       this.mediaArray = data; // tallennetaan media array nimellä data
-
-      this.mediaArray.map(media => {
-        const temp = media.filename.split('.');
-        media.thumbnail = temp[0] + '-tn320.png';
-      });
-      console.log(this.mediaArray);
     });
   }
 
